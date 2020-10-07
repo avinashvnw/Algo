@@ -1,4 +1,4 @@
-package code.practice.algo.algopractice.arrays;
+package code.practice.algo.algopractice.common.arrays;
 
 public class MissingInteger {
 
@@ -23,14 +23,7 @@ public class MissingInteger {
      int missingCount = 0;
      boolean wereNumberMissing = false;
 
-         for(int i=0; i<numArr.length; i++){
 
-            if(!(numArr[i]+1 == numArr[i+1])){
-                missingCount++;
-            }
-
-         }
-         System.out.println(" total numbers missed are : "+missingCount);
      return wereNumberMissing;
  }
 

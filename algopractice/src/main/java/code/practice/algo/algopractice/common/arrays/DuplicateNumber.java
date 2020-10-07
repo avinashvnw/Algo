@@ -1,4 +1,4 @@
-package code.practice.algo.algopractice.arrays;
+package code.practice.algo.algopractice.common.arrays;
 
 public class DuplicateNumber {
 
