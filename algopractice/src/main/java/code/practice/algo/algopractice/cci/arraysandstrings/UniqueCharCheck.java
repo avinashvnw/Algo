@@ -17,7 +17,7 @@ public class UniqueCharCheck {
 
     public void solutionOne(String input){
         boolean isUnique = true;
-        Character[] charAr = new Character[];
+        Character[] charAr = new Character[256];
         for(int i=0; i<input.length(); i++){
 
             int charVal = input.charAt(i);
@@ -35,14 +35,17 @@ public class UniqueCharCheck {
 
         boolean isUnique;
         Boolean charAr[] = new Boolean[256];
-        if(input.length()>256)
+        if(input.length()>256) {
             return false;
-        for(int i=0; i<input.length(); i++ ){
+        }
+        for(int i=0; i<input.length(); i++){
             int value = input.charAt(i);
-            if(charAr[value]){
+            boolean result = charAr[value];
+            charAr[value] = true;
+            if(charAr[value] == true){
                return false;
             }
-            charAr[value] = true;
+
         }
         return true;
     }
