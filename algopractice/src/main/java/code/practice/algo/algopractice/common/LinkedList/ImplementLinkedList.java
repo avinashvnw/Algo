@@ -27,10 +27,10 @@ public class ImplementLinkedList {
 
         //linking Nodes
 
-        llist.head.next= alpha;
-        alpha.next= bravo;
+        llist.head.next = alpha;
+        alpha.next = bravo;
         bravo.next = charlie;
-        charlie.next  = delta;
+        charlie.next = delta;
         llist.tail = delta;
 
         //print nodes
@@ -42,32 +42,75 @@ public class ImplementLinkedList {
         Node extraNode = new Node(-5);
         Node extraNode1 = new Node(100);
         llist.tail.next = extraNode;
-        llist.tail= extraNode;
+        llist.tail = extraNode;
 
         llist.tail.next = extraNode1;
         llist.tail = extraNode1;
 
 
-        System.out.println(" head node is : "+llist.head.data);
-        System.out.println(" tail node is : "+llist.tail.data);
+        System.out.println(" head node is : " + llist.head.data);
+        System.out.println(" tail node is : " + llist.tail.data);
+
+        printNodes(llist);
 
         //inserting nodes and adding to head
 
         Node zulu = new Node(25);
-        llist.head.prev = zulu;
-        llist.head= zulu;
+        Node temp = llist.head;
+        llist.head = zulu;
+        llist.head.next = temp;
+        temp.next = alpha;
         System.out.println(" new nodes are: ");
         printNodes(llist);
 
 
         // updating data
+        System.out.println("");
+        System.out.println(" updating data in nodes are: ");
+        updateNode(llist.tail, 5555);
+        printNodes(llist);
 
-        updateNode(llist.tail, 10);
+
+        //deleting head node
 
 
+        //find if the data is availble in any node
+
+        findNode(llist, -1);
 
 
+    }
 
+    private static void findNode(ImplementLinkedList llist, int searchData) {
+
+
+        Node pos = llist.head;
+        while (pos != null) {
+            if (pos.data == searchData) {
+                System.out.println(" node found in the linked list");
+            }
+            pos = pos.next;
+
+        }
+    }
+
+    public static void updateNode(Node pos, int data) {
+
+        pos.data = data;
+    }
+
+    public static void printNodes(ImplementLinkedList llist) {
+
+        Node currNode = llist.head;
+
+        if (currNode == null) {
+            System.out.println("No Nodes were available in linked list");
+        } else {
+            while (currNode != null) {
+                System.out.print(" -> " + currNode.data);
+                currNode = currNode.next;
+            }
+        }
 
     }
 
@@ -79,28 +122,6 @@ public class ImplementLinkedList {
 
         Node(int d) {
             data = d;
-        }
-
-    }
-
-    public static void updateNode(Node pos, int data){
-
-        pos.data = data;
-    }
-
-
-    public static void printNodes(ImplementLinkedList llist){
-
-        Node currNode = llist.head;
-
-        if(currNode == null){
-            System.out.println("No Nodes were available in linked list");
-        }
-        else{
-            while(currNode != null){
-                System.out.print(" -> "+currNode.data);
-                currNode = currNode.next;
-            }
         }
 
     }
