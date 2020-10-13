@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class StringPermutataionCheck {
 
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
 
         String alpha = "abb";
         String bravo = "bac";
@@ -17,23 +17,21 @@ public class StringPermutataionCheck {
     }
 
 
-    private void solutionTwo(String alpha, String bravo){
+    private void solutionTwo(String alpha, String bravo) {
 
-        HashMap<Character,Integer> hmap = new HashMap<>();
-        int count=0;
-        for(int i=0; i<alpha.length(); i++){
-            if(hmap.containsKey(alpha.charAt(i))){
+        HashMap<Character, Integer> hmap = new HashMap<>();
+        int count = 0;
+        for (int i = 0; i < alpha.length(); i++) {
+            if (hmap.containsKey(alpha.charAt(i))) {
                 hmap.put(alpha.charAt(i), count++);
             }
-            hmap.put(alpha.charAt(i),count++);
+            hmap.put(alpha.charAt(i), count++);
         }
 
     }
 
 
-
-
-    public void solutionOne(String alpha, String bravo){
+    public void solutionOne(String alpha, String bravo) {
 
         // String sortedAlpha = sortString(alpha);
         // String sortedBravo = sortString(bravo);
